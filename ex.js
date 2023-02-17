@@ -42,7 +42,19 @@ let str = JSON.stringify(arr);
 
 //Как получить текущую дату?
 let now = new Date();
-console.log(now);
+
+function showDate(now){
+    let month;
+    if (now.getMonth()+1 > 9){
+        month = now.getMonth()+1;
+    }
+    else {
+        month = '0'+ (now.getMonth()+1);
+    }
+    console.log(`${now.getDate()}.${month}.${now.getFullYear()} ${now.getHours()}:${now.getMinutes()}`)
+}
+
+showDate(now);
 
 //Как сравнить два объекта? Один из вариантов:
 let obj2 = {a:1, c:3, z:{m:3}};
